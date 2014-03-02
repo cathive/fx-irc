@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+ Copyright (C) 2013-2014 The Cat Hive Developers.
+ 
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+ 
+ http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+ -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.cathive.fx.irc</groupId>
+    <artifactId>com.cathive.fx.irc.parent</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>Internet Relay Chat</name>
+    <description>JavaFX-based Internet Relay Chat core libraries and client implementation</description>
+    <url>https://github.com/cathive/fx-irc/</url>
+    <inceptionYear>2013</inceptionYear>
+
+    <parent>
+        <groupId>com.cathive</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>3</version>
+    </parent>
+
+    <modules>
+        <module>com.cathive.fx.irc.jerklib</module>
+        <module>com.cathive.fx.irc.client</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <prerequisites>
+        <maven>3.0.0</maven>
+    </prerequisites>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+            <distribution>repo</distribution>
+            <comments/>
+        </license>
+    </licenses>
+
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/cathive/fx-irc/issues</url>
+    </issueManagement>
+
+    <developers>
+        <developer>
+            <id>headcr4sh</id>
+            <name>Benjamin P. Jung</name>
+            <email>headcr4sh@gmail.com</email>
+            <url>http://profiles.google.com/headcr4sh</url>
+            <timezone>Europe/Berlin</timezone>
+            <properties>
+                <github.username>headcr4sh</github.username>
+            </properties>
+            <roles>
+                <role>Developer</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <contributors/>
+
+    <scm>
+        <connection>scm:git:https://github.com/cathive/fx-irc.git</connection>
+        <developerConnection>scm:git:git@github.com:cathive/fx-irc.git</developerConnection>
+        <url>https://github.com/cathive/fx-irc/</url>
+        <tag>master</tag>
+    </scm>
+
+    <ciManagement>
+        <system>Travis CI</system>
+        <url>https://travis-ci.org/cathive/fx-irc/</url>
+    </ciManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <scope>provided</scope>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.cathive.fonts</groupId>
+                <artifactId>fonts-fontawesome</artifactId>
+                <version>3.2.1.0</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>com.cathive.fx</groupId>
+                <artifactId>com.cathive.fx.cdi</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.weld.se</groupId>
+                <artifactId>weld-se</artifactId>
+                <version>2.1.2.Final</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

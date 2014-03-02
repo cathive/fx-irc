@@ -1,0 +1,61 @@
+<body>
+<p>
+JerkLib is an event driven IRC library for Java.
+</p>
+<p>
+JerkLib can roughly be divided into two parts. First are the classes and
+interfaces used for making connections , speaking in channels etc. Everything
+else is an event type.<br>
+Here is a list of important classes/interfaces and a brief description:
+</p>
+
+<ul>
+<li><span>{@link jerklib.ConnectionManager}</span>
+<br>
+<span>
+ConnectionManager is used to make new connections to servers. One
+instance of ConnectionManager can handle multiple server connections.
+</span>
+<br><br>
+<li><span class="className">{@link jerklib.Session}</span>
+<br>
+<span>
+Session is a very important class as it is where most of your interaction
+with JerkLib will happen. A Session represents one IRC server. Session contains
+methods to join channels, send messages , and about everything else you need to
+interact with  an IRC server.
+</span>
+<br><br>
+<li><span>{@link jerklib.events.IRCEvent}</span>
+<br>
+<span>
+IRCEvent is the base interface for all event types. The interfaces describes
+basic methods all events will have, like getSession getRawEventData etc.
+</span>
+<br><br>
+<li><span>{@link jerklib.events.IRCEvent.Type}</span>
+<br>
+<span>
+Type is an Enum found in IRCEvent. A member of this Enum is used to identify
+events using event.getType().
+
+</span>
+<br><br>
+<li><span>{@link jerklib.listeners.IRCEventListener}</span>
+<br>
+<span>
+IRCEventListener is one way to get notified of incoming events from a
+Session(connection).IRCEventListeners will be notified of all events
+generating from a Session it has been added to.
+</span>
+<br><br>
+<li><span>{@link jerklib.tasks.Task}</span>
+
+<br>
+<span>
+The task interface is another way to be notified of events. Unlike IRCEventListeners , tasks
+can filter the events they are notified of. Tasks also provide a cancel() method , this
+causes the task to not run again.
+</span>
+</ul>
+</body>
