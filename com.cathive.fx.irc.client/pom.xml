@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.cathive.fx.irc</groupId>
+        <artifactId>com.cathive.fx.irc.parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+    <artifactId>com.cathive.fx.irc.client</artifactId>
+    <name>Cat Hive - IRC - client app</name>
+    <description>An IRC client application written in Java / JavaFX</description>
+    <packaging>jar</packaging>
+    <build/>
+    <dependencies>
+        <dependency>
+            <groupId>com.cathive.fonts</groupId>
+            <artifactId>fonts-fontawesome</artifactId>
+            <type>jar</type>
+            <scope>compile</scope>
+            <optional>false</optional>
+        </dependency>
+        <dependency>
+            <groupId>com.cathive.fx</groupId>
+            <artifactId>com.cathive.fx.cdi</artifactId>
+            <type>jar</type>
+            <scope>compile</scope>
+            <optional>false</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.weld.se</groupId>
+            <artifactId>weld-se</artifactId>
+            <type>jar</type>
+            <scope>compile</scope>
+            <optional>false</optional>
+        </dependency>
+    </dependencies>
+</project>

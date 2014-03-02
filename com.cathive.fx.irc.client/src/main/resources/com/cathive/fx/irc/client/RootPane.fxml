@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?language javascript?>
+<?import com.cathive.fonts.fontawesome.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?scenebuilder-classpath-element ${user.home}/.m2/repository/com/cathive/fonts/fonts-fontawesome/3.2.1.0/fonts-fontawesome-3.2.1.0.jar?>
+<?scenebuilder-preview-i18n-resource Messages.properties?>
+
+<fx:root fx:id="rootPane" blendMode="SRC_OVER" minHeight="360.0" minWidth="640.0" prefHeight="720.0" prefWidth="1280.0" type="javafx.scene.layout.BorderPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cathive.fx.irc.client.RootPane">
+  <bottom>
+    <HBox alignment="BOTTOM_LEFT" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="-1.0" spacing="8.0">
+      <children>
+        <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" prefHeight="-1.0" prefWidth="-1.0" spacing="8.0" HBox.hgrow="ALWAYS">
+          <children>
+            <Button mnemonicParsing="false" text="%button.send.text">
+<graphic><FontAwesomeIconView icon="ICON_SHARE_SIGN" />
+</graphic>
+<tooltip><Tooltip text="%button.send.tooltip.text" />
+</tooltip></Button>
+          </children>
+        </HBox>
+        <HBox alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" prefHeight="-1.0" prefWidth="-1.0" spacing="8.0" HBox.hgrow="ALWAYS">
+          <children>
+            <Separator orientation="VERTICAL" prefHeight="-1.0" />
+            <ProgressBar prefWidth="-1.0" progress="0.0" HBox.hgrow="NEVER" />
+          </children>
+        </HBox>
+      </children>
+      <BorderPane.margin>
+        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+      </BorderPane.margin>
+    </HBox>
+  </bottom>
+  <center>
+    <AnchorPane prefHeight="200.0" prefWidth="200.0">
+      <children>
+        <TabPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="-1.0" tabClosingPolicy="ALL_TABS" tabMaxHeight="1.7976931348623157E308" tabMinHeight="24.0" tabMinWidth="24.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+          <tabs>
+            <Tab text="Untitled Tab 1">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+            <Tab text="Untitled Tab 2">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+          </tabs>
+        </TabPane>
+        <ToggleButton contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" text="Nicks" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="4.0">
+          <graphic>
+            <FontAwesomeIconView icon="ICON_TABLE" />
+          </graphic>
+<tooltip><Tooltip text="Empty Tooltip" />
+</tooltip>
+        </ToggleButton>
+      </children>
+    </AnchorPane>
+  </center>
+  <top>
+    <ToolBar maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+      <items>
+        <Button mnemonicParsing="false" text="%app.title" />
+      </items>
+    </ToolBar>
+  </top>
+</fx:root>
