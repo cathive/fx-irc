@@ -1,4 +1,4 @@
-fx-cdi
+fx-irc
 ======
 
 [![Build Status](https://travis-ci.org/cathive/fx-irc.png)](https://travis-ci.org/cathive/fx-irc)
