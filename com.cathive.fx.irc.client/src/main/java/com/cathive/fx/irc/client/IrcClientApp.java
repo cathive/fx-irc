@@ -20,7 +20,6 @@ public class IrcClientApp extends WeldApplication {
     @IrcClientComponent
     private ResourceBundle messages;
 
-
     @Override
     public void start(final Stage primaryStage) throws Exception {
 

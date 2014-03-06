@@ -9,16 +9,16 @@
         <version>1.0.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-    <artifactId>com.cathive.fx.irc.client</artifactId>
-    <name>Cat Hive - IRC - client app</name>
-    <description>An IRC client application written in Java / JavaFX</description>
+    <artifactId>com.cathive.fx.irc.core</artifactId>
+    <name>Cat Hive - IRC - core components</name>
+    <description>An IRC client library in Java / JavaFX</description>
     <packaging>jar</packaging>
     <build/>
     <dependencies>
 
         <dependency>
             <groupId>com.cathive.fx.irc</groupId>
-            <artifactId>com.cathive.fx.irc.core</artifactId>
+            <artifactId>com.cathive.fx.irc.jerklib</artifactId>
             <type>jar</type>
             <scope>compile</scope>
             <optional>false</optional>

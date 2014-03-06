@@ -1,5 +1,6 @@
 package com.cathive.fx.irc.client;
 
+import com.cathive.fx.cdi.FXMLComponent;
 import com.cathive.fx.cdi.FXMLLoaderParams;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,32 +19,10 @@ import java.util.ResourceBundle;
 /**
  * @author Benjamin P. Jung
  */
-@Named
-@ManagedBean
+@FXMLComponent(location = "RootPane.fxml", resources = "com.cathive.fx.irc.client.Messages")
 public class RootPane extends BorderPane {
-
-    @Inject
-    @IrcClientComponent
-    private ResourceBundle messages;
-
-    @Inject
-    @FXMLLoaderParams(location = "RootPane.fxml")
-    private FXMLLoader fxmlLoader;
 
     @FXML
     private ToolBar toolBar;
-
-    @PostConstruct
-    protected void initialize() {
-
-        this.fxmlLoader.setRoot(this);
-        this.fxmlLoader.setResources(this.messages);
-        try {
-            fxmlLoader.load();
-        } catch (final IOException e) {
-            throw new RuntimeException(e);
-        }
-
-    }
 
 }

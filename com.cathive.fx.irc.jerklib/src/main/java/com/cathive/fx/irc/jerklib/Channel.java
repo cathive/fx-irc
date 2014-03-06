@@ -3,6 +3,10 @@ package com.cathive.fx.irc.jerklib;
 import com.cathive.fx.irc.jerklib.ModeAdjustment.Action;
 import com.cathive.fx.irc.jerklib.events.JoinCompleteEvent;
 import com.cathive.fx.irc.jerklib.events.TopicEvent;
+import javafx.beans.property.ReadOnlyStringProperty;
+import javafx.beans.property.ReadOnlyStringWrapper;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -26,10 +30,12 @@ import java.util.Map;
  * @author mohadib
  * 
  */
-public class Channel
-{
+public class Channel {
+
+    public static final String NAME_PROPERTY = "name";
+
 	/** Channel name */
-	private String name;
+	private final ReadOnlyStringWrapper name = new ReadOnlyStringWrapper(this, NAME_PROPERTY);
 	private Session session;
 	private Map<String, List<ModeAdjustment>> userMap;
 	private List<ModeAdjustment> channelModes = new ArrayList<>();
@@ -74,7 +80,7 @@ public class Channel
 			}
 		};
 		
-		this.name = name;
+		this.name.set(name);
 		this.session = session;
 	}
 
@@ -238,7 +244,7 @@ public class Channel
 	 */
 	public void mode(String mode)
 	{
-		session.mode(name, mode);
+		session.mode(name.get(), mode);
 	}
 
 	/**
@@ -296,10 +302,9 @@ public class Channel
 	 * 
 	 * @return name of Channel
 	 */
-	public String getName()
-	{
-		return name;
-	}
+	public String getName() { return this.name.get(); }
+
+    public ReadOnlyStringProperty nameProperty() { return this.name.getReadOnlyProperty(); }
 
 	/**
 	 * Speak in the Channel.

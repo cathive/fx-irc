@@ -38,6 +38,7 @@
 
     <modules>
         <module>com.cathive.fx.irc.jerklib</module>
+        <module>com.cathive.fx.irc.core</module>
         <module>com.cathive.fx.irc.client</module>
     </modules>
 
@@ -45,6 +46,10 @@
         <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+
+        <guava.version>16.0.1</guava.version>
+        <weld.version>2.1.2.Final</weld.version>
+
     </properties>
 
     <prerequisites>
@@ -110,7 +115,22 @@
     </dependencies>
 
     <dependencyManagement>
+
         <dependencies>
+
+            <dependency>
+                <groupId>com.cathive.fx.irc</groupId>
+                <artifactId>com.cathive.fx.irc.jerklib</artifactId>
+                <version>${project.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>com.cathive.fx.irc</groupId>
+                <artifactId>com.cathive.fx.irc.core</artifactId>
+                <version>${project.version}</version>
+                <type>jar</type>
+            </dependency>
+
             <dependency>
                 <groupId>com.cathive.fonts</groupId>
                 <artifactId>fonts-fontawesome</artifactId>
@@ -120,12 +140,34 @@
             <dependency>
                 <groupId>com.cathive.fx</groupId>
                 <artifactId>com.cathive.fx.cdi</artifactId>
-                <version>1.0.0</version>
+                <version>1.0.1-SNAPSHOT</version>
             </dependency>
+
+            <!-- CDI implementation: JBoss WELD -->
             <dependency>
                 <groupId>org.jboss.weld.se</groupId>
-                <artifactId>weld-se</artifactId>
-                <version>2.1.2.Final</version>
+                <artifactId>weld-se-core</artifactId>
+                <version>${weld.version}</version>
+                <type>jar</type>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jboss.weld</groupId>
+                <artifactId>weld-core-impl</artifactId>
+                <version>${weld.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.google.guava</groupId>
+                        <artifactId>guava</artifactId>
+                    </exclusion>
+                </exclusions>
+                <type>jar</type>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

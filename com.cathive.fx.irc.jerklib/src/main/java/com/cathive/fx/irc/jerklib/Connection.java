@@ -4,6 +4,8 @@ import com.cathive.fx.irc.jerklib.Session.State;
 import com.cathive.fx.irc.jerklib.events.IRCEvent;
 import com.cathive.fx.irc.jerklib.events.IRCEvent.Type;
 import com.cathive.fx.irc.jerklib.listeners.WriteRequestListener;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -20,8 +22,10 @@ import java.util.logging.Logger;
  * @author mohadib
  *
  */
-class Connection
-{
+class Connection {
+
+    public static final String HOSTNAME_PROPERTY = "hostname";
+
 	private final Logger log = Logger.getLogger(this.getClass().getName());
 
 	/* ConnectionManager for this Connection */
@@ -43,7 +47,7 @@ class Connection
 	private final StringBuffer stringBuff = new StringBuffer();
 
 	/* actual hostname connected to */
-	private String actualHostName;
+	private final StringProperty actualHostName = new SimpleStringProperty(this, HOSTNAME_PROPERTY);
 	
 	/* Session Connection belongs to */
 	private final Session session;
@@ -74,9 +78,8 @@ class Connection
 	 * Sets the actual host name of this Connection.
 	 * @param name
 	 */
-	void setHostName(String name)
-	{
-		actualHostName = name;
+	void setHostName(String name) {
+		this.actualHostName.set(name);
 	}
 
 	/**
@@ -86,8 +89,12 @@ class Connection
 	 */
 	String getHostName()
 	{
-		return actualHostName;
+		return this.actualHostName.get();
 	}
+
+    StringProperty hostNameProperty() {
+        return this.actualHostName;
+    }
 
 	/**
 	 * Adds a listener to be notified of all data written via this Connection

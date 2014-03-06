@@ -33,25 +33,19 @@ public abstract class TaskImpl implements Task
     }
 
 
-    /* (non-Javadoc)
-     * @see com.cathive.fx.irc.jerklib.tasks.Task#getName()
-     */
+    @Override
     public String getName()
     {
         return name;
     }
 
-    /* (non-Javadoc)
-     * @see com.cathive.fx.irc.jerklib.tasks.Task#cancel()
-     */
+    @Override
     public void cancel()
     {
         canceled = true;
     }
 
-    /* (non-Javadoc)
-     * @see com.cathive.fx.irc.jerklib.tasks.Task#isCanceled()
-     */
+    @Override
     public boolean isCanceled()
     {
         return canceled;
